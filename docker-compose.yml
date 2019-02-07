@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+
+  nproxy:
+    image: jwilder/nginx-proxy
+    container_name: nproxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - nproxy
+    restart: unless-stopped
+
+networks:
+  nproxy:
+    name: nproxy
