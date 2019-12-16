@@ -3,62 +3,49 @@
 
 root = true
 
-# Unix-style newlines with a newline ending every file
 [*]
 charset = utf-8
+# Get rid of whitespace to avoid diffs with a bunch of EOL changes
+trim_trailing_whitespace = true
+# Unix-style newlines with a newline ending every file
 end_of_line = lf
 insert_final_newline = true
-trim_trailing_whitespace = true
-
-# general config
 indent_style = space
 indent_size = 4
 
-# HTML-Files
-[*.html]
-indent_style = tab
+# TypeScript/JavaScript/JSON files
+[*.{ts,js,json}]
 indent_size = 2
 
-# TMPL-Files
-[*.tmpl]
-indent_style = tab
-indent_size = 4
+# TypoScript/TSconfig files
+[*.{typoscript,tsconfig}]
+indent_size = 2
 
-# JS-Files
-[*.js]
-indent_style = space
+# XLF/XML files
+[*.{xlf,xml}]
+indent_style = tab
+
+# YAML-Files
+[*.{yaml,yml}]
 indent_size = 2
 
 # ReST-Files
 [*.rst]
-indent_style = space
 indent_size = 3
 
-# TypoScript
-[*.{txt,ts,setupts,constantsts,pagets,typoscript,tsconfig}]
-indent_size = 2
-indent_style = space
-
-[*.{json,yml,yaml,md}]
-indent_size = 2
-indent_style = space
-
-[*.xlf]
+# SQL files
+[*.sql]
 indent_style = tab
-indent_size = 4
-
-[*.{xml,xsd,sql}]
 indent_size = 2
-indent_style = tab
-
-[*.md]
-trim_trailing_whitespace = false
-
-[.stylelintrc]
-indent_size = 2
-indent_style = space
 
 # .htaccess
 [{_.htaccess,.htaccess}]
 indent_style = tab
-indent_size = 4
+
+# HTML files
+[*.html]
+indent_size = 2
+
+# CSS/SCSS files
+[*.{css,scss}]
+indent_size = 2

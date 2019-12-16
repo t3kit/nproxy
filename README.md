@@ -1,23 +1,12 @@
-# docker compose configuration to start nginx proxy to use with t3kit project.
+# Docker compose configuration to start nginx proxy to use with t3kit project
 
 [Based on Automated Nginx Reverse Proxy for Docker](https://github.com/jwilder/nginx-proxy)
-
-We need it for an easier way to handle several **t3kit** projects in one local machine. The main advantage of it is just to use one `VIRTUAL_HOST` env variable to separate it from other projects
 
 ## Usage
 
 - Clone this repository
-- Run `docker compose up` inside of the cloned folder
+- Run `docker compose up -d` inside of the cloned folder
 
 ***
 
-Also, there is a possibility to start **nginx** proxy container using just `docker`, without using `docker composer`
-
-```shell
-docker network create nproxy
-docker run -d -p=80:80 --name=nproxy --restart=unless-stopped --network=nproxy -v=/var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
-```
-
-***
-
-Here is a [typo3 v9 starter kit](https://github.com/t3kit/t3kit-starter) which use this approach with all needed documentation to start. Just clone this repo, install **composer** dependency, change `PROJECT_NAME` in .env file and start **docker compose** to test it.
+Check [t3kit starter kit](https://github.com/t3kit/t3kit-starter) with all needed documentation to start a new project on t3kit basis.

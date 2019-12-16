@@ -3,12 +3,14 @@ version: '3.7'
 services:
 
   nproxy:
-    image: jwilder/nginx-proxy
+    image: t3kit/nproxy:1.1.0
     container_name: nproxy
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ~/.certs/server:/etc/nginx/certs
     networks:
       - nproxy
     restart: unless-stopped
