@@ -11,6 +11,7 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ~/.certs/server:/etc/nginx/certs
+      - dhparam:/etc/nginx/dhparam
     networks:
       - nproxy
     restart: unless-stopped
@@ -18,3 +19,7 @@ services:
 networks:
   nproxy:
     name: nproxy
+
+volumes:
+  dhparam:
+    name: nproxy_dhparam
