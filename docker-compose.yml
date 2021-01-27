@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   nproxy:
-    image: t3kit/nproxy:1.1.1
+    image: t3kit/nproxy:1.2.0
     container_name: nproxy
     ports:
       - "80:80"
