@@ -2,6 +2,11 @@
 
 [Based on Automated Nginx Reverse Proxy for Docker](https://github.com/jwilder/nginx-proxy)
 
+## Required dependencies
+
+- [Docker](https://docs.docker.com/install/) >= v20.10.2
+- [Docker Compose](https://docs.docker.com/compose/install/) >= v1.27.4
+
 ## Usage
 
 - Clone this repository
